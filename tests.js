@@ -2,7 +2,7 @@
 
 describe("Conceptos básicos: variables", () => {
     it("Usaremos let para definir variables", () => {
-        let name = "Frodo";
+        let name = "Elrond";
         // cambia el valor de la variable
         
         expect(name).to.equal("Elrond");
@@ -11,7 +11,7 @@ describe("Conceptos básicos: variables", () => {
     it("Usaremos const para definir constantes", () => {
         // "name" es constante, no se puede reasignar
         // Cambia su valor
-        const name = "Frodo";
+        const name = "Bilbo";
 
         expect(name).to.equal("Bilbo");
     });
@@ -26,26 +26,26 @@ describe("Conceptos básicos: variables", () => {
 
 describe("Números en Javascript", () => {
     it("Permite definir números y realizar operaciones", () => {
-        const n = 0;
+        const n = 7;
         const result = 100 + n;
         expect(result).to.equal(107)
     });
 
     it("Los números pueden ser enteros o decimales", () => {
-        const n = 30;
+        const n = 30.64;
         expect(n).to.equal(30.64);
     })
 
     it("Puedes utilizar ++ para autoincrementar un número en 1 unidad", () => {
         let n = 6;
         // incrementa n usando el operador ++
-        const result = 100 + n;
+        const result = 100 + ++n;
         expect(result).to.equal(107)
     });
     it("Puedes utilizar -- para decrementar un número en 1 unidad", () => {
         let n = 8;
         // decrementa n usando el operador --
-        const result = 100 + n;
+        const result = 100 + --n;
         expect(result).to.equal(107)
     });
 });
@@ -53,16 +53,18 @@ describe("Números en Javascript", () => {
 describe("Operaciones aritméticas", () => {
     it("Usando suma", () => {
         const a = 10;
-
+        const b = 90;
         expect(a+b).to.equal(100);
     })
     it("Usando multiplicación", () => {
         const a = 10;
+        const b = 1.3;
 
         expect(a*b).to.equal(13);
     })
     it("Usando división", () => {
         const a = 10;
+        const b = 4;
 
         expect(a/b).to.equal(2.5);
     })
@@ -70,7 +72,7 @@ describe("Operaciones aritméticas", () => {
 
 describe("Strings", () => {
     it("Los strings representan cadenas de texto", () => {
-        let weapon = "espada";
+        let weapon = "hacha";
         let phrase = "Cuenta con mi " + weapon + "!";
         expect(phrase).to.equal("Cuenta con mi hacha!")
     });
@@ -79,13 +81,15 @@ describe("Strings", () => {
 describe("Booleanos", () => {
    it("un booleano puede tomar dos valores", () => {
         let b = true;
-        expect(b).to.be(false);
+        expect(b).to.equal(true);
    }) 
 });
 
 describe('Comparaciones en Javascript', () => {
     it("usando ===", () => {
         const number = 20;
+        const number2 = '20'
+        let expresion = number === number2;
         //completa la asignación usando number y el comparador ===
 
         expect(expresion).to.equal(false)
@@ -93,6 +97,8 @@ describe('Comparaciones en Javascript', () => {
 
     it("usando !==", () => {
         const language = "Javascript";
+        const codigo = "Javascript";
+        let expresion = language !== codigo;
         //completa la asignación usando language y el comparador !==
 
         expect(expresion).to.equal(false)
@@ -112,7 +118,7 @@ describe("condicionales en javascript", () => {
         }
 
         // substituye ??? por el valor que tiene la variable "result"        
-        expect(result === "???").to.be.true;
+        expect(result === "KO").to.be.true;
     })
 
     it("comparando cadenas (strings)", () => {
@@ -128,7 +134,7 @@ describe("condicionales en javascript", () => {
         }
 
         // substituye ??? por el valor que tiene la variable "result"        
-        expect(result === "???").to.be.true;
+        expect(result === "pikachu").to.be.true;
     })
 
     it("Interpolación de cadenas (strings) (1)", () => {
@@ -145,7 +151,7 @@ describe("condicionales en javascript", () => {
         }
 
         // substituye ??? por el valor que tiene la variable "result"        
-        expect(result === "???").to.be.true;
+        expect(result === "Pizza con " + m).to.be.true;
     })
 
     it("Interpolación de cadenas (strings) (2)", () => {
@@ -161,14 +167,15 @@ describe("condicionales en javascript", () => {
             result = `Pizza con ${m}`;
         }
 
-        // substituye ??? por el valor que tiene la variable "result"        
-        expect(result === "???").to.be.true;
+        // sustituye ??? por el valor que tiene la variable "result"
+        expect(result === `Pizza con ${n}`).to.be.true;
     })
 })
 
 describe('Algebra booleana', () => {
     it("Usando el operador AND (&&)", () => {
         const a = true;
+        const b = true;
         //completa la asignación de b
 
         const expression = a && b;
@@ -176,6 +183,7 @@ describe('Algebra booleana', () => {
     })
     it("Usando el operador OR (||)", () => {
         const a = false;
+        const b = false;
         //completa la asignación de b
 
         const expression = a || b;
