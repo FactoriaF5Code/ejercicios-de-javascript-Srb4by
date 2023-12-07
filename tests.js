@@ -183,11 +183,11 @@ describe('Algebra booleana', () => {
     })
     it("Usando el operador OR (||)", () => {
         const a = false;
-        const b = false;
+        const b = true;
         //completa la asignación de b
 
         const expression = a || b;
-        expect(expression).to.equal(false);
+        expect(expression).to.equal(true);
     })
 })
 
@@ -198,13 +198,13 @@ describe("Funciones (I)", () => {
     function evenOrOdd(n) {
         // cambia el contenido de la función para hacer
         // pasar los tests
-        return "";
+        return n % 2 === 0 ? "even" : "odd";
     }
 
     function greeting(name) {
         // cambia el contenido de la función para hacer
         // pasar los tests
-        return "";
+        return `Hola, ${name}!`;
     }
 
     it("Función que nos dice si un número es par (even) o impar (odd)", () => {
@@ -249,7 +249,7 @@ describe("Funciones (II)", () => {
 
 
         // substituye "???" por el valor que tiene la variable "result"        
-        expect(result === "???").to.be.true;
+        expect(result === 28 ).to.be.true;
     })
 
     it("Cuál es el resultado de invocar la función? (2)", () => {
@@ -258,16 +258,16 @@ describe("Funciones (II)", () => {
 
 
         // substituye "???" por el valor que tiene la variable "result"        
-        expect(result === "???").to.be.true;
+        expect(result === "Son Pinky y Cerebro").to.be.true;
     })
 
     it("Cuál es el resultado de invocar la función? (3)", () => {
 
         // substituye "???" por el resultado en cada caso
-        expect(h("khaleesi mother of dragons breaker of chains") === "???").to.be.true;
-        expect(h("sarah") === "???").to.be.true;
-        expect(h("bob") === "???").to.be.true;
-        expect(h("robertson") === "???").to.be.true;
+        expect(h("khaleesi mother of dragons breaker of chains") === "very long").to.be.true;
+        expect(h("sarah") === "adecquate").to.be.true;
+        expect(h("bob") === "too short").to.be.true;
+        expect(h("robertson") === "long").to.be.true;
     })
 
 })
@@ -276,18 +276,23 @@ describe("Colecciones en JS: Array", () => {
     it("Pueden crearse usando [ ]", () => {
 
         // crea un array "a" usando los corchetes []
+        let a = []
 
         expect(Array.isArray(a)).to.be.true;
     })
     it("Pueden crearse usando new Array", () => {
 
         // crea un array "a" usando el constructor "new"
+        let a = new Array()
 
         expect(Array.isArray(a)).to.be.true;
     })
     it("Pueden estar vacíos o contener elementos", () => {
 
         // crea un array que esté vacío y otro que no esté vacío
+        let emptyArray = [];
+        let nonEmptyArray = [1, 2, "asd"];
+
 
         expect(emptyArray).to.be.empty;
         expect(nonEmptyArray).not.to.be.empty;
@@ -298,7 +303,7 @@ describe("Colecciones en JS: Array", () => {
 
         // completa la definición que falta usando la propiedad length
 
-        expect("???").to.equal(4);
+        expect(list.length).to.equal(4);
     })
     it("Nos permiten acceder a cada elemento del array", () => {
 
@@ -306,14 +311,15 @@ describe("Colecciones en JS: Array", () => {
 
         // sustituye "???" en cada caso para acceder al elemento correspondiente de la lista
 
-        expect("???").to.equal("Piña");
-        expect("???").to.equal("Melón");
+        expect(fruits[0]).to.equal("Piña");
+        expect(fruits[3]).to.equal("Melón");
     })
     it("Nos permiten modificar cada elemento", () => {
 
         let fruits = ["Piña", "Manzana", "Fresa", "Melón"]
 
         // Añade el código que permite modificar el elemento correspondiente
+        fruits[1] = "Pera"
 
         expect(fruits).to.have.same.members(["Piña", "Pera", "Fresa", "Melón"])
     })
@@ -322,6 +328,7 @@ describe("Colecciones en JS: Array", () => {
         let fruits = ["Piña", "Manzana", "Fresa", "Melón"]
 
         // Añade el código que permite modificar la lista (incluyendo un elemento al final)
+        fruits.push("Pera")
 
         expect(fruits).to.have.same.members(["Piña", "Manzana", "Fresa", "Melón", "Pera"])
     })
